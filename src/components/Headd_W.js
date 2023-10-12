@@ -1,7 +1,7 @@
  import "../../src/App.css";
  function Headd(){
     const myStyle = {
-        color: "green", backgroundColor: "red"
+        color: "pink", backgroundColor: "red"
     }
     return(
         <div class="bg-dark text-center text-primary">  {/**After importing bootstrap in App.js we shhould give classes of BS */}
