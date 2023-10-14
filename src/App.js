@@ -11,52 +11,33 @@ import C1 from "./components/prop"
 import C2 from "./components/c2"
 import C4 from "./components/c4"
 import Foote from "./components/Foot_W"
+import React, { useState } from 'react';
 
 function App() {
+  const [text, setText] = useState('');
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
   return (
+   
+
+    // TASK 1
+
     <div>
       <center>
-        <header>
-          <Header name="Sujan">
-          {/* <h1>Hello world</h1> */}
-          </Header>
-          <Nav age="20" />
-          <Nav age="30" />
-          <Nav age="40" />
-          <C1 gift="watch">
-            
-          </C1>   
-          <C2/>
-          <HashRouter>
-          <Headd>
-
-          </Headd>
-          <Navi>
-            
-
-          </Navi>
-
-          
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/ContactUs" element={<ContactUs />} />
-              <Route path="/Projects" element={<Projects />} />
-            </Routes>
-            <Foote>
- 
-          </Foote>
-          </HashRouter>
-
-        <F1>
-
-        </F1>
-          
-          <Footer brand="instagram">
-          {/* <h4>This is MEKALA SUJAN</h4> */}
-          </Footer>
-          <C4 />
-        </header>
+        <h1>Responsive Paragraph Word Counter</h1>
+        <textarea
+          value={text}
+          onChange={handleTextChange}
+          rows={4}  // Adjust the number of rows
+          cols={50} // Adjust the number of columns
+        ></textarea>
+        <p style={{ textAlign: 'center' }}>
+          Word Count: {wordCount}
+        </p>
       </center>
     </div>
   )
