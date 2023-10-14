@@ -38,7 +38,70 @@
 } */
 
 
-#i1{
+/* #i1{
   color: "yellow";
   background-color: "blue";
+} */
+
+/*REACT TASK 2*/
+.container {
+  background: 
+  linear-gradient(to right, rgb(88, 130, 199), rgb(78, 221, 214),rgb(7, 178, 81)) 0% 0%/ 100% 100%;
+  /* linear-gradient(to right, green, green) 33.33% 0% / 33.33% 100%,
+  linear-gradient(to right, blue, blue) 66.66% 0% / 33.33% 100%; */
+background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.output {
+  outline:none;
+  border:10px;
+  width: 320px;
+  height: 70px;
+  font-size: 32px;
+  padding: 10px 10px;
+  background: rgb(40, 40, 92);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  color: rgb(247, 246, 246);
+  text-align: right;
+
+}
+
+button {
+  width: 85px;
+  height: 90px;
+  font-size: 26px;
+  cursor: pointer;
+  border: none;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+}
+
+.digit:hover {
+  background-color: #d9d9d9;
+}
+
+.operator:hover {
+  background-color: #0a0805;
+}
+
+.fun-keys:hover {
+  background-color: #aba9a9;
+}
+
+
+.operator {
+  border-right: none;
+  background-color: #1a150e;
+  color: #3e26ab;
+}
+
+.fun-keys {
+  background-color: #c9c8cc;
+
 }
