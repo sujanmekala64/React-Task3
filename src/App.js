@@ -11,35 +11,72 @@ import C1 from "./components/prop"
 import C2 from "./components/c2"
 import C4 from "./components/c4"
 import Foote from "./components/Foot_W"
-import React, { useState } from 'react';
-
+// import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 function App() {
-  const [text, setText] = useState('');
+  const [users, setUsers] = useState([]);
 
-  const handleTextChange = (e) => {
-    setText(e.target.value);
+  useEffect(() => {
+    // Fetch data from the API
+    fetch('https://dummyjson.com/users')
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data.users); // Assuming the response is an object with a "users" array
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const tableStyle = {
+    backgroundColor: 'black',
+    color: 'white',
   };
-
-  const wordCount = text.split(/\s+/).filter(Boolean).length;
   return (
-   
+      
 
-    // TASK 1
-
+    // TASK 4
     <div>
-      <center>
-        <h1>Responsive Paragraph Word Counter</h1>
-        <textarea
-          value={text}
-          onChange={handleTextChange}
-          rows={4}  // Adjust the number of rows
-          cols={50} // Adjust the number of columns
-        ></textarea>
-        <p style={{ textAlign: 'center' }}>
-          Word Count: {wordCount}
-        </p>
-      </center>
-    </div>
+    <center>
+      <h1 >Dummy data</h1>
+    </center>
+    <table style={tableStyle}>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Profile Pic</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Domain</th>
+          <th>IP</th>
+          <th>University</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user, index) => (
+          <tr key={user.id}>
+            <td>{index + 1}</td>
+            <td>
+              <img src={user.profilePic} alt="Profile" width="50" />
+            </td>
+            <td>{user.firstName}</td>
+            <td>{user.lastName}</td>
+            <td>{user.gender}</td>
+            <td>{user.email}</td>
+            <td>{user.username}</td>
+            <td>{user.domain}</td>
+            <td>{user.ip}</td>
+            <td>{user.university}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+    
   )
 }
 export default App;
