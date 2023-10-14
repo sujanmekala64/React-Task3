@@ -14,67 +14,48 @@ import Foote from "./components/Foot_W"
 // import React, { useState } from 'react';
 import React, { useState, useEffect } from 'react';
 function App() {
-  const [users, setUsers] = useState([]);
+  const [birthdate, setBirthdate] = useState('');
+  const [age, setAge] = useState(null);
 
-  useEffect(() => {
-    // Fetch data from the API
-    fetch('https://dummyjson.com/users')
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data.users); // Assuming the response is an object with a "users" array
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
-  const tableStyle = {
-    backgroundColor: 'black',
-    color: 'white',
+  const calculateAge = () => {
+    if (birthdate) {
+      const today = new Date();
+      const birthDate = new Date(birthdate);
+      const ageDiff = today - birthDate;
+      const ageDate = new Date(ageDiff);
+      const calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+      setAge(calculatedAge);
+    } else {
+      alert('Please enter your date of birth');
+    }
   };
   return (
       
 
-    // TASK 4
-    <div>
-    <center>
-      <h1 >Dummy data</h1>
-    </center>
-    <table style={tableStyle}>
-      <thead>
-        <tr>
-          <th>S.No</th>
-          <th>Profile Pic</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Gender</th>
-          <th>Email</th>
-          <th>Username</th>
-          <th>Domain</th>
-          <th>IP</th>
-          <th>University</th>
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user, index) => (
-          <tr key={user.id}>
-            <td>{index + 1}</td>
-            <td>
-              <img src={user.profilePic} alt="Profile" width="50" />
-            </td>
-            <td>{user.firstName}</td>
-            <td>{user.lastName}</td>
-            <td>{user.gender}</td>
-            <td>{user.email}</td>
-            <td>{user.username}</td>
-            <td>{user.domain}</td>
-            <td>{user.ip}</td>
-            <td>{user.university}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
+    // TASK 5
+   <div>
+      <center>
+        <h1>Age Calculator</h1>
+        <h3>Enter your date of birth</h3>
+        <input
+          type="date"
+          value={birthdate}
+          onChange={(e) => setBirthdate(e.target.value)}
+        />
+        <br />
+        <button
+          style={{ backgroundColor: 'blue', color: 'white' }}
+          onClick={calculateAge}
+        >
+          Calculate Age
+        </button>
+        {age !== null && (
+          <p>
+            <strong>Your are {age} years old.</strong>
+          </p>
+        )}
+      </center>
+    </div>
 
     
   )
