@@ -44,13 +44,13 @@
 } */
 
 /*REACT TASK 2*/
-.container {
+/* .container {
   background: 
   linear-gradient(to right, rgb(88, 130, 199), rgb(78, 221, 214),rgb(7, 178, 81)) 0% 0%/ 100% 100%;
   /* linear-gradient(to right, green, green) 33.33% 0% / 33.33% 100%,
   linear-gradient(to right, blue, blue) 66.66% 0% / 33.33% 100%; */
-background-repeat: no-repeat;
-  display: flex;
+/* background-repeat: no-repeat; */
+  /* display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -99,9 +99,95 @@ button {
   border-right: none;
   background-color: #1a150e;
   color: #3e26ab;
-}
+} 
 
 .fun-keys {
   background-color: #c9c8cc;
 
-}
+} */ 
+
+
+   /*TASK 3*/
+   /* .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+
+
+  /*TASK 6*/
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  

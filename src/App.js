@@ -1,40 +1,18 @@
-import Keypad from "../src/components/keypad"
-
-import './App.css'
-import { useState } from "react"
-
+// import logo from './logo.svg';
+import './App.css';
+import Header from './components/Header';
+import Education from './components/Education';
+import Skills from './components/Skills';
+import Footer from './components/Footer';
 function App() {
-
-
-      let [input, setInput] = useState("")
-      function handleClick(value) {
-
-            setInput(input + value)
-
-      }
-      function calculate(value) {
-
-            let outputVal = eval(input)
-            setInput(outputVal)
-
-      }
-      function handleClear() {
-
-            setInput("")
-
-      }
-
-      return (
-            <div className="container">
-                  <div className="caculator">
-                        <input type="text" value={input} className="output" readOnly />
-                        <Keypad handleClick={handleClick} handleClear={handleClear} calculate={calculate}></Keypad>
-
-                  </div>
-
-            </div>
-      )
+  return (
+   <div>
+    <Header />
+    <Education />
+    <Skills/>
+    <Footer/>
+   </div>
+  );
 }
 
-export default App
-
+export default App;
